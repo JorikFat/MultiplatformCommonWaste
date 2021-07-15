@@ -1,18 +1,15 @@
 package dev.jorik.apps.commonwaste.result.presentation;
 
-import dev.jorik.apps.commonwaste.person.domain.PersonsUseCase;
-import dev.jorik.apps.commonwaste.waste.domain.WastesUseCase;
+import dev.jorik.apps.commonwaste.domain.CommonWasteInteractor;
 
 public class ResultPresenter {
-    private PersonsUseCase personsDomain;
-    private WastesUseCase wastesDomain;
+    private CommonWasteInteractor domain;
 
-    public ResultPresenter(PersonsUseCase personsDomain, WastesUseCase wastesDomain) {
-        this.personsDomain = personsDomain;
-        this.wastesDomain = wastesDomain;
+    public ResultPresenter(CommonWasteInteractor interactor) {
+        domain = interactor;
     }
 
     public void attachView(ResultView view){
-        view.showResults(personsDomain.getPersons(), wastesDomain.getWastes());
+        view.showResults(domain.getPersons(), domain.getWastes());
     }
 }

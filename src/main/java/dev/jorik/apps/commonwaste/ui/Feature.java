@@ -35,7 +35,7 @@ public class Feature {
         WastesScreen wastesScreen = new WastesScreen(scanner, wastesPresenter);
         wastesScreen.start();
         wastesScreen = null;
-        ResultPresenter resultPresenter = new ResultPresenter(personsUseCase, wastesUseCase);
+        ResultPresenter resultPresenter = new ResultPresenter(interactor);
         ResultScreen resultScreen = new ResultScreen(resultPresenter);
         resultScreen.start();
     }

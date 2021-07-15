@@ -1,7 +1,6 @@
 package dev.jorik.apps.commonwaste.waste.ui;
 
 import dev.jorik.apps.commonwaste.person.domain.Person;
-import dev.jorik.apps.commonwaste.waste.domain.Waste;
 import dev.jorik.apps.commonwaste.waste.presentation.WastesPresenter;
 import dev.jorik.apps.commonwaste.waste.presentation.WastesView;
 

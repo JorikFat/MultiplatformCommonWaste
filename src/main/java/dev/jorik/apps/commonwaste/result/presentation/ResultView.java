@@ -1,4 +1,4 @@
-package dev.jorik.apps.commonwaste.result;
+package dev.jorik.apps.commonwaste.result.presentation;
 
 import dev.jorik.apps.commonwaste.person.domain.Person;
 import dev.jorik.apps.commonwaste.waste.domain.Waste;

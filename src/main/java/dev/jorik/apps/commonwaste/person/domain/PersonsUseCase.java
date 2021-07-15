@@ -14,17 +14,4 @@ public class PersonsUseCase {
     public List<Person> getPersons(){
         return persons;
     }
-
-    public List<Person> getPersons(long[] ids){
-        //todo add check allNegative|allPositive
-        if(ids.length == 1 && ids[0] == 0) return persons;
-        List<Person> rList = new ArrayList<>();
-        for(long id : ids) rList.add(find(id));
-        return rList;
-    }
-
-    private Person find(long id){
-        for (Person person : persons) if(person.getId() == id) return person;
-        return null;
-    }
 }
