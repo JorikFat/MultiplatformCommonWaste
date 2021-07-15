@@ -8,7 +8,6 @@ import java.util.List;
 
 public class WastesPresenter {
     private WastesView view;
-//    private WastesRouter router;
     private final WastesUseCase wastesDomain;
     private final PersonsUseCase personsDomain;
     private ViewWaste viewState;
@@ -16,7 +15,6 @@ public class WastesPresenter {
     public WastesPresenter(WastesUseCase wastesDomain, PersonsUseCase personsDomain/*, WastesRouter router*/) {
         this.wastesDomain = wastesDomain;
         this.personsDomain = personsDomain;
-//        this.router = router;
         viewState = new ViewWaste();
     }
 
@@ -28,7 +26,6 @@ public class WastesPresenter {
 
     public void onInputName(String name){
         if(name.isEmpty()){
-//            view.showWastes(wastesDomain.getWastes());
         } else {
 
 
@@ -57,7 +54,6 @@ public class WastesPresenter {
         wastesDomain.createWaste(viewState.getName(), viewState.getAmount(), viewState.getPayerId(), viewState.getConsumersId());
         viewState = new ViewWaste();
         view.inputName();
-//        router.forward();
     }
 
     private long[] parseArray(String[] stringArray){

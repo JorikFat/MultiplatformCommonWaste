@@ -15,13 +15,7 @@ public class WastesUseCase {
 
     public void createWaste(String name, float amount, long payerId, long[] consumenrsId){
         long id = wastes.isEmpty() ? 1 : wastes.get(wastes.size() - 1).getId() + 1;
-//        wastes.add(new Waste(id, name, amount, interactor.getPerson(payerId), interactor.getPersons(consumenrsId)));
-        addWaste(new Waste(id, name, amount, interactor.getPerson(payerId), interactor.getPersons(consumenrsId)));
-    }
-
-
-
-    public void addWaste(Waste waste){
+        Waste waste = new Waste(id, name, amount, interactor.getPerson(payerId), interactor.getPersons(consumenrsId));
         wastes.add(waste);
         Person payer = waste.getPayer();
         payer.setBalance(payer.getBalance() - waste.getAmount());

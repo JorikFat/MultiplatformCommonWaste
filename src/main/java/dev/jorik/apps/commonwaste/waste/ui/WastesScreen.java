@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class WastesScreen implements WastesView {
     private Scanner scanner;
-//    private BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
     private final WastesPresenter presenter;
     private List<Person> persons;
 
@@ -20,8 +19,6 @@ public class WastesScreen implements WastesView {
     }
 
     public void start(){
-//        scanner = new Scanner(System.in);
-
         presenter.attachView(this);
     }
 
@@ -56,13 +53,6 @@ public class WastesScreen implements WastesView {
         printPersons(persons);
         System.out.println("Введите id тех, между кем делить: ");
         presenter.onInputConsumersId(scanner.nextLine());
-    }
-
-    @Override
-    public void showWastes(List<Waste> wastes) {
-        for (Waste waste :wastes){
-            System.out.printf("%d: %s\t%f", waste.getId(), waste.getName(), waste.getAmount());
-        }
     }
 
     private void printPersons(List<Person> persons){
